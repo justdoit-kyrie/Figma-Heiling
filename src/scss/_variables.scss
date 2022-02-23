@@ -1,0 +1,22 @@
+// font
+$primary-font: "Prata";
+$secondary-font: "DM Sans";
+
+// color
+$black-color: #222120;
+$white-color: #f8f3ed;
+$gray-color: #7c9097;
+
+// size
+$wrapper: 1600px;
+$container: 1260px;
+
+// key-frame
+@keyframes current {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}

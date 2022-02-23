@@ -1,0 +1,29 @@
+.heading-font {
+  font-family: $primary-font;
+}
+
+.heading-text {
+  font-size: 7rem;
+  line-height: lineHeight(76, 70);
+  font-weight: 400;
+  color: $black-color;
+
+  @include maxWidth(767px) {
+    font-size: 46px;
+    line-height: lineHeight(56, 46);
+  }
+}
+
+.link-text {
+  font-size: 2.4rem;
+  line-height: lineHeight(30, 24);
+  text-decoration: underline;
+  @include maxWidth(767px) {
+    font-size: 18px;
+    line-height: lineHeight(30, 18);
+  }
+}
+
+.line {
+  margin: 0 auto;
+}

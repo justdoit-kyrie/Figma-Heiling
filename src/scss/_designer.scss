@@ -1,0 +1,60 @@
+.designer {
+  background: $black-color;
+  padding-top: 16rem;
+
+  &-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14rem;
+  }
+
+  &-title,
+  &-link {
+    color: $white-color;
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    width: 100%;
+    max-width: 61.6rem;
+
+    color: $white-color;
+  }
+
+  &-desc {
+    font-size: 2.4rem;
+    line-height: lineHeight(34, 24);
+    opacity: 0.7;
+    display: block;
+
+    &:nth-child(2) {
+      margin: 2.5rem 0 4rem;
+    }
+  }
+
+  @include maxWidth(1023px) {
+    &-main {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 7rem;
+    }
+
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  @include maxWidth(767px) {
+    padding-top: 12rem;
+
+    &-desc {
+      font-size: 18px;
+      line-height: lineHeight(30, 18);
+    }
+  }
+}
