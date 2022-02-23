@@ -143,14 +143,22 @@ h6 {
 }
 .header-img {
   height: 100%;
+  min-height: 70.5rem;
+  max-height: 70.5rem;
   width: 100%;
+  max-width: 50.8rem;
   object-fit: cover;
+  border-radius: 100rem 100rem 0 0;
 }
 .header-img-2 {
   position: absolute;
   bottom: 0;
   left: 0;
   transform: translateY(32%);
+  min-height: 23.2rem;
+  max-height: 23.2rem;
+  max-width: 18.4rem;
+  border-radius: 100rem 100rem 0 0;
 }
 .header-link {
   color: #f8f3ed;
@@ -213,6 +221,9 @@ h6 {
   transform: translateY(32%);
 }
 @media screen and (max-width: 1279px) {
+  .header-img-2 {
+    display: none;
+  }
   .header-title-child {
     display: none;
   }
@@ -245,6 +256,7 @@ h6 {
     max-width: 85%;
   }
   .header-img-2 {
+    display: block;
     max-width: 35%;
     min-width: 35%;
     bottom: 3rem;
@@ -254,6 +266,10 @@ h6 {
   }
 }
 @media screen and (max-width: 1023px) {
+  .header-img, .header-img-2 {
+    min-height: revert;
+    max-height: revert;
+  }
   .header-title {
     font-size: 46px;
     line-height: 1.2173913043;
@@ -410,6 +426,9 @@ h6 {
 }
 .project-main {
   position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
 }
 .project-main::before {
   content: "";
@@ -435,6 +454,60 @@ h6 {
 .project-content-link {
   color: #f8f3ed;
 }
+.project-image {
+  height: 100%;
+  width: 100%;
+  max-height: 71.2rem;
+  grid-column: 1/2;
+  grid-row: 1/2;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: all 0.75s ease;
+}
+.project-image.active {
+  opacity: 1;
+  transform: scale(1);
+}
+.project-container {
+  position: relative;
+}
+.project-actions {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  display: flex;
+  gap: 3rem;
+}
+.project-actions span {
+  width: 2.6rem;
+  height: 2.6rem;
+  background: #f8f3ed;
+  opacity: 0.4;
+  border-radius: 100rem;
+  transition: all 0.2s linear;
+}
+.project-actions span.active {
+  opacity: 1;
+  background: transparent;
+  border: 1px solid #f8f3ed;
+  position: relative;
+}
+.project-actions span.active::before {
+  content: "";
+  border-radius: 100rem;
+  width: 65%;
+  height: 65%;
+  background: #f8f3ed;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.project-actions span:hover {
+  cursor: pointer;
+}
 @media screen and (max-width: 1023px) {
   .project {
     padding-top: 6rem;
@@ -453,6 +526,17 @@ h6 {
   .project-content-title {
     font-size: 32px;
     line-height: 1.25;
+  }
+  .project-actions {
+    gap: 1.2rem;
+    right: 1.5rem;
+    bottom: 1rem;
+    transform: none;
+    top: revert;
+  }
+  .project-actions span {
+    width: 1.5rem;
+    height: 1.5rem;
   }
 }
 

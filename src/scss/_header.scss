@@ -39,8 +39,15 @@
 
   &-img {
     height: 100%;
+    min-height: 70.5rem;
+    max-height: 70.5rem;
+
     width: 100%;
+    max-width: 50.8rem;
+
     object-fit: cover;
+
+    border-radius: 100rem 100rem 0 0;
   }
 
   &-img-2 {
@@ -48,6 +55,13 @@
     bottom: 0;
     left: 0;
     transform: translateY(32%);
+
+    min-height: 23.2rem;
+    max-height: 23.2rem;
+
+    max-width: 18.4rem;
+
+    border-radius: 100rem 100rem 0 0;
   }
 
   &-link {
@@ -128,6 +142,10 @@
   }
 
   @include maxWidth(1279px) {
+    &-img-2 {
+      display: none;
+    }
+
     &-title {
       &-child {
         display: none;
@@ -170,6 +188,7 @@
     }
 
     &-img-2 {
+      display: block;
       max-width: 35%;
       min-width: 35%;
 
@@ -181,6 +200,12 @@
   }
 
   @include maxWidth(1023px) {
+    &-img,
+    &-img-2 {
+      min-height: revert;
+      max-height: revert;
+    }
+
     &-title {
       font-size: 46px;
       line-height: lineHeight(56, 46);
